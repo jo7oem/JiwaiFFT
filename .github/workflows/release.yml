@@ -2,9 +2,9 @@ name: Release Go Project
 on:
   push:
     branches:
-        -release
-          - tags:
-          - v*
+      - release
+      tags:
+        - v*
 
 jobs:
   test:
