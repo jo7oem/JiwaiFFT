@@ -1,8 +1,13 @@
 name: Release Go Project
-on.push.release:
-  tags:
-    - v*
-
+on:
+  pull_request:
+    tags: v*
+    tags-ignore: release
+    branches: release
+  push:
+    tags: v*
+    tags-ignore: release
+    branches: release      
 jobs:
   test:
     name: Test
