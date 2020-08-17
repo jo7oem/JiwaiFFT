@@ -2,10 +2,9 @@ name: Release Go Project
 on:
   pull_request:
     tags: v*
-    branches: release
   push:
     tags: v*
-    branches: release      
+  
 jobs:
   test:
     name: Test
