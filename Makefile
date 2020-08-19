@@ -21,8 +21,12 @@ devel-deps: deps
 		    golang.org/x/lint/golint \
 		    github.com/motemen/gobump \
 		    github.com/Songmu/make2help/cmd/make2help \
-		    golang.org/x/tools/cmd/goimports \
+		    golang.org/x/tools/cmd/goimports
 
+.PHONY: lint-dep
+lint-dep:
+	GO111MODULE=off go get \
+	golang.org/x/lint/golint
 
 ## Run tests
 .PHONY: test
@@ -31,7 +35,7 @@ test: deps
 
 ## Lint
 .PHONY: lint
-lint: devel-deps
+lint: lint-dep
 	go vet ./...
 	golint -set_exit_status ./...
 
