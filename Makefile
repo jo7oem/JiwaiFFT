@@ -21,7 +21,6 @@ devel-deps: deps
 		    golang.org/x/lint/golint \
 		    github.com/motemen/gobump \
 		    github.com/Songmu/make2help/cmd/make2help \
-		    github.com/motemen/gobump \
 		    golang.org/x/tools/cmd/goimports \
 
 
