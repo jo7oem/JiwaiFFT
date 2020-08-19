@@ -4,6 +4,6 @@ import "fmt"
 
 // Run entry point
 func Run() error {
-	fmt.Println("Rlease test?")
+	fmt.Println("Release test?")
 	return nil
 }
