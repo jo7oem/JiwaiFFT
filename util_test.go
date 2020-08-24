@@ -1,6 +1,9 @@
 package jiwaifft
 
-import "testing"
+import (
+	"math"
+	"testing"
+)
 
 var floatSumple = []float64{1, 1.5, 0, -1.5, 4}
 var complexSumple = []complex128{1 + 0i, 1.5 + 0i, 0i, -1.5 + 0i, 4 + 0i}
@@ -17,14 +20,14 @@ func TestF2C1d(t *testing.T) {
 	}
 }
 
-func TestC2F1d(t *testing.T) {
-	res := C2F1d(complexSumple)
+func TestC2Power1d(t *testing.T) {
+	res := C2Power1d(complexSumple)
 	lx := len(complexSumple)
 	for i := 0; i < lx; i++ {
-		if res[i] == floatSumple[i] {
+		if res[i] == math.Abs(floatSumple[i]) {
 			continue
 		} else {
-			t.Fatalf("i=%v in=%v,out=%v,correct=%v", i, complexSumple[i], res[i], floatSumple[i])
+			t.Fatalf("i=%v in=%v,out=%v,correct=%v", i, complexSumple[i], res[i], math.Abs(floatSumple[i]))
 		}
 	}
 }

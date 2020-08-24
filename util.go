@@ -2,6 +2,7 @@ package jiwaifft
 
 import "math/cmplx"
 
+// F2C1d is convert []float64 to []complex128
 func F2C1d(x []float64) []complex128 {
 	lx := len(x)
 	res := make([]complex128, lx, lx)
@@ -11,7 +12,8 @@ func F2C1d(x []float64) []complex128 {
 	return res
 }
 
-func C2F1d(x []complex128) []float64 {
+// C2Power1d is convert []Abs(complex128) to []float64
+func C2Power1d(x []complex128) []float64 {
 	lx := len(x)
 	res := make([]float64, lx, lx)
 	for i := 0; i < lx; i++ {
