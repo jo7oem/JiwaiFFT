@@ -21,3 +21,14 @@ func C2Power1d(x []complex128) []float64 {
 	}
 	return res
 }
+
+// C2Real1d is convert []Real(complex128) to []float64
+func C2Real1d(x []complex128) []float64 {
+	lx := len(x)
+	res := make([]float64, lx, lx)
+	for i, val := range x {
+		res[i] = real(val)
+	}
+	return res
+
+}

@@ -31,3 +31,15 @@ func TestC2Power1d(t *testing.T) {
 		}
 	}
 }
+
+func TestC2Real1d(t *testing.T) {
+	res := C2Real1d(complexSumple)
+	lx := len(complexSumple)
+	for i := 0; i < lx; i++ {
+		if res[i] == floatSumple[i] {
+			continue
+		} else {
+			t.Fatalf("i=%v in=%v,out=%v,correct=%v", i, complexSumple[i], res[i], floatSumple[i])
+		}
+	}
+}
