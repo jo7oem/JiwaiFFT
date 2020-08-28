@@ -5,8 +5,8 @@ import (
 	"testing"
 )
 
-var floatSumple = []float64{1, 1.5, 0, -1.5, 4}
-var complexSumple = []complex128{1 + 0i, 1.5 + 0i, 0i, -1.5 + 0i, 4 + 0i}
+var floatSumple = []float64{1, 1.5, 0, -1.5, 4, 1, 1.5, 0, -1.5, 4, 1, 1.5, 0, -1.5, 4, 1, 1.5, 0, -1.5, 4}
+var complexSumple = []complex128{1 + 0i, 1.5 + 0i, 0i, -1.5 + 0i, 4 + 0i, 1 + 0i, 1.5 + 0i, 0i, -1.5 + 0i, 4 + 0i, 1 + 0i, 1.5 + 0i, 0i, -1.5 + 0i, 4 + 0i, 1 + 0i, 1.5 + 0i, 0i, -1.5 + 0i, 4 + 0i}
 
 func TestF2C1d(t *testing.T) {
 	res := F2C1d(floatSumple)
