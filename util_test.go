@@ -43,3 +43,14 @@ func TestC2Real1d(t *testing.T) {
 		}
 	}
 }
+func TestC2Imag1d(t *testing.T) {
+	res := C2Imag1d(complexSumple)
+	lx := len(complexSumple)
+	for i := 0; i < lx; i++ {
+		if res[i] == 0 {
+			continue
+		} else {
+			t.Fatalf("i=%v in=%v,out=%v,correct=%v", i, complexSumple[i], res[i], 0)
+		}
+	}
+}

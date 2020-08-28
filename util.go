@@ -32,3 +32,13 @@ func C2Real1d(x []complex128) []float64 {
 	return res
 
 }
+
+// C2Imag1d is convert
+func C2Imag1d(x []complex128) []float64 {
+	lx := len(x)
+	res := make([]float64, lx, lx)
+	for i := 0; i < lx; i++ {
+		res[i] = imag(x[i])
+	}
+	return res
+}
