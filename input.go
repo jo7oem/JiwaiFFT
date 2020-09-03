@@ -55,5 +55,4 @@ func ReadCSVData1d(fileName string, skipLine int) ([][]float64, error) {
 		}
 		res[0] = append(res[0], val)
 	}
-	return res, nil
 }
