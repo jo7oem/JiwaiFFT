@@ -2,6 +2,8 @@ package jiwaifft
 
 import (
 	"flag"
+	"fmt"
+	"path"
 	"strings"
 )
 
@@ -42,6 +44,20 @@ func Run() error {
 		useColor = Gray
 	}
 	_ = useColor
+
 	flag.Parse()
+	args := flag.Args()
+	if len(args) == 0 {
+		flag.PrintDefaults()
+		return nil
+	}
+	var fileList []string
+	if directoryScan {
+		fileList = append(fileList, path.Dir(path.Clean(args[0])))
+	}
+	fmt.Println(len(args))
+	for _, i := range fileList {
+		fmt.Println(i)
+	}
 	return nil
 }
